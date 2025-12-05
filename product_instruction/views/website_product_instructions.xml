@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Inherit the product detail page -->
+    <template id="website_product_instructions_after_terms" inherit_id="website_sale.product" name="Product Instructions After Terms">
+
+        <!-- Target the div wrapping Terms and Conditions -->
+        <xpath expr="//div[contains(@class, 'o_wsale_product_details_content_section_cta')]" position="after">
+
+            <t t-if="product.product_instructions">
+                <div class="o_wsale_product_details_content_section mb-4">
+                    <h5 class="mb-2">Custom Addons</h5>
+                    <ul class="list-unstyled ms-2">
+                        <t t-foreach="product.product_instructions" t-as="inst">
+                            <li class="mb-1">
+                                <i class="fa fa-cube me-2" t-att-data-instruction-id="inst.id" style="cursor: pointer; color: #714B67;"></i>
+                                <span t-esc="inst.product_instructions"/>
+                            </li>
+                        </t>
+                    </ul>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

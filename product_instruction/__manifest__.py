@@ -1,0 +1,21 @@
+{
+    'name': 'Product Custom Addons',
+    'version': '19.0.1.0.0',
+    'summary': 'Allow customers to configure custom add-ons on selected products prior to completing checkout.',
+    'description': 'Empower buyers to personalize product choices with custom add-ons before proceeding to payment.',
+    'category': 'Website',
+    'author': 'Sudeep Chhetri',
+    'license': 'LGPL-3',
+    'depends': ['base','website_sale'],
+    'data': [
+        'views/product_instructions.xml',
+        'views/product_instruction_tab.xml',
+        'views/website_product_instructions.xml',
+        'views/sales_order.xml',
+        'security/ir.model.access.csv',
+    ],
+    'images': ['static/description/banner_1.png'],
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+}

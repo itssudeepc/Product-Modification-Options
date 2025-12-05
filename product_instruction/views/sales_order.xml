@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form_product_instructions" model="ir.ui.view">
+        <field name="name">sale.order.form.product.instructions</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='order_lines']" position="after">
+                <page string="Custom Addons" name="product_instructions">
+                    <field name="order_line">
+                        <list editable="bottom" limit="200">
+                            <field name="product_id" readonly="1"/>
+                            <field name="name" readonly="1"/>
+                            <!-- <field name="selected_instruction_id" string="Custom Addon"/> -->
+                            <field name="product_instructions_ids" widget="many2many_tags" string="Custom Addons" readonly="1"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+
